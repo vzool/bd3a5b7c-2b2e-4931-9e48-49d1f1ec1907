@@ -78,7 +78,7 @@ app.controller('itemTypeCont', ['$scope', '$http', 'CRUDServices', '$routeParams
                 growl.success($scope.bean.name + 'تمت إضافتة المالك بنجاح ', {title: 'عملية ناجحة!'});
                 location.href = "#/showowner";
             }).error(function(data){
-                console.error('Error', data);
+                growl.error('الخادم رفض الطلب: البيانات ناقصة أو غير صحيحة', {title: 'فشلت العملية'});
             });
 
         } else {
@@ -87,7 +87,7 @@ app.controller('itemTypeCont', ['$scope', '$http', 'CRUDServices', '$routeParams
                 growl.success($scope.bean.name + 'تمت تحديثة بنجاح ', {title: 'عملية ناجحة!'});
                 location.href = "#/showowner";
             }).error(function(data){
-                console.error('Error', data);
+                growl.error('الخادم رفض الطلب: البيانات ناقصة أو غير صحيحة', {title: 'فشلت العملية'});
             });;
         }
         $scope.resetFields();
@@ -104,7 +104,7 @@ app.controller('itemTypeCont', ['$scope', '$http', 'CRUDServices', '$routeParams
         });
     }
 
-    if ($routeParams.ID !== null) {
+    if ($routeParams.ID) {
         $scope.getBean($routeParams.ID);
     }
 
