@@ -1,0 +1,135 @@
+<ul class="breadcrumb">
+	<li><a href="#">الرئيسية</a></li>
+	<li class="active">أنواع الاصناف</li>
+</ul>
+
+<div class="page-title">
+	<h2>
+		إدخال انواع الاصناف <span class="fa fa-arrow-circle-o-right"></span>
+	</h2>
+</div>
+
+<div class="page-content-wrap">
+
+
+	<div class="row">
+		<div class="col-md-12">
+
+			<form class="form-horizontal">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+
+						<ul class="panel-controls">
+							<li><a href="#" class="panel-remove"><span
+									class="fa fa-times"></span></a></li>
+						</ul>
+					</div>
+					<div class="panel-body"></div>
+					<div class="panel-body">
+
+						<div class="form-group">
+							<div class="col-md-3"></div>
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									<input type="text" class="form-control" ng-model="bean.id"
+										disabled="disabled" /> <span class="input-group-addon"><span
+										class="fa fa-eye"></span></span>
+								</div>
+							</div>
+							<label class="col-md-3 col-xs-12 control-label">الكود</label>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-3"></div>
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									<input type="text" class="form-control" ng-model="bean.name" />
+									<span class="input-group-addon"><span
+										class="fa fa-pencil"></span></span>
+								</div>
+							</div>
+							<label class="col-md-3 col-xs-12 control-label">الاسم</label>
+						</div>
+
+
+
+					</div>
+					<div class="panel-footer">
+						<button class="btn btn-default pull-right"
+							ng-click="resetFields()">Clear Form</button>
+						<button class="btn btn-primary pull-left" ng-click="saveBean()">Submit</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+<div class="page-title">
+	<h2>
+		عرض انواع الاصناف <span class="fa fa-arrow-circle-o-right"></span>
+	</h2>
+</div>
+	<div class="row">
+		<div class="col-md-12">
+
+			<!-- START DATATABLE EXPORT -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="btn-group pull-right">
+						<button class="btn btn-danger dropdown-toggle"
+							data-toggle="dropdown">
+							<i class="fa fa-bars"></i> Export Data
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#"
+								onClick="$('#table').tableExport({type:'txt',escape:'false'});"><img
+									src='img/icons/txt.png' width="24" /> TXT</a></li>
+							<li class="divider"></li>
+							<li><a href="#"
+								onClick="$('#table').tableExport({type:'excel',escape:'false'});"><img
+									src='img/icons/xls.png' width="24" /> XLS</a></li>
+							<li><a href="#"
+								onClick="$('#table').tableExport({type:'doc',escape:'false'});"><img
+									src='img/icons/word.png' width="24" /> Word</a></li>
+							<li><a href="#"
+								onClick="$('#table').tableExport({type:'powerpoint',escape:'false'});"><img
+									src='img/icons/ppt.png' width="24" /> PowerPoint</a></li>
+							<li class="divider"></li>
+							<li><a href="#"
+								onClick="$('#table').tableExport({type:'png',escape:'false'});"><img
+									src='img/icons/png.png' width="24" /> PNG</a></li>
+							<li><a href="#"
+								onClick="$('#table').tableExport({type:'pdf',escape:'false'});"><img
+									src='img/icons/pdf.png' width="24" /> PDF</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table id="table" class="table datatable">
+							<thead>
+								<tr>
+									<th>كود</th>
+									<th>أسم</th>
+									<th>حذف</th>
+									<th>تعديل</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="x in beans">
+									<td>{{x.id}}</td>
+									<td>{{x.name}}</td>
+									<td>
+										<button class="btn btn-primary btn-condensed" ng-click="selectBean(x)"><i class="fa fa-eraser"></i></button>
+									</td>
+									<td>
+										<button class="btn btn-primary btn-condensed" ng-click="selectBean(x)"><i class="fa fa-edit"></i></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,71 @@
+<!-- page content -->
+<div class="right_col" role="main" >
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    الزيارات
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                    <div class="x_content">
+
+                        <form  class="form-horizontal form-label-left" novalidate>
+
+                            <span class="section">إضافة زيارة</span>
+                            <div class="item form-group top_search">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="form-control">المنشآة 
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" ng-model="bean.orgnizationBean"   typeahead-on-select="onSelect($item, $model, $label)" uib-typeahead="org as org.name for org in getOrgs($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control col-md-7 col-xs-12">
+
+                                </div>
+
+                               
+                            </div>
+                            <div class="item form-group" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myActSel">المراقب <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select id="myActSel" class="form-control col-md-7 col-xs-12" ng-options="user as user.name for user in users" ng-model="bean.userBean" ng-selected="{{bean.userBean}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                        </div><!--/row-->
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="form-control">الملاحظة 
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <textarea class="form-control col-md-7 col-xs-12"   ng-model="bean.note"  placeholder="الملاحظة" type="text"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <button type="submit" class="btn btn-primary">Cancel</button>
+                                    <button  class="btn btn-success" ng-click="saveBean()">Submit</button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

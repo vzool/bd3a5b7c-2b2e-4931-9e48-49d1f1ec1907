@@ -1,0 +1,74 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                     تبديل الزيارات
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                     <div class="item form-group col-md-12 col-sm-12" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myActSel">من المراقب <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select id="myActSel" ng-change="test()" class="form-control col-md-6 col-xs-6" ng-options="user as user.name for user in users" ng-model="selectedFromUser" ng-selected="{{selectedFromUser}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                            
+                        </div><!--/row-->
+                           <div class="item form-group col-md-12 col-sm-12" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myToSel">الى المراقب <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select id="myToSel"  class="form-control col-md-6 col-xs-6" ng-options="user as user.name for user in users" ng-model="selectedToUser" ng-selected="{{selectedToUser}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                            
+                        </div><!--/row-->
+                <div class="item form-group">
+                   
+                    <button ng-click="getVisitsBeans()" class="btn btn-primary">بحث</button>
+                    <button ng-show="beans.length>0" ng-click="changeVisits()" class="btn btn-primary">تبديل</button>
+
+                </div>
+               
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
+
+                    <div class="x_content">
+                        <div class="dataTables_wrapper" role="grid" >
+                            <div  ng-if="dtOptions">
+
+                                <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped responsive-utilities table-condensed  jambo_table" >
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        
+    </div>
+</div>

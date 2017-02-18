@@ -1,0 +1,146 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    المراقبين
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+
+                    <form  class="form-horizontal form-label-left" novalidate>
+
+                        <span class="section">إضافة مراقب</span>
+                        <div class="item form-group" >
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" > صورة المراقب
+                            </label>
+                            <div class="col-sm-4" ng-show="previewImage">
+                                <h3>Preview</h3>
+                                <img ng-src="{{previewImage}}" width="100">
+                                <br>
+                                {{uploadFile.name}}
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <div class="form-group">
+                                    <file-field  class="btn" ng-model="uploadFile" ng-class="{'btn-success':uploadFile}" preview="previewImage">Select File</file-field>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">إسم  <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="name" class="form-control col-md-7 col-xs-12"   ng-model="bean.name"  placeholder="إسم المراقب" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edu">المستوى التعليمى<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="edu" class="form-control col-md-7 col-xs-12"   ng-model="bean.education"  placeholder="المستوى التعليمى" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password"> الباسورد<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="password" class="form-control col-md-7 col-xs-12"   ng-model="bean.password"  placeholder="الباسورد" required="required" type="password">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password">الشيفت<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select ng-model="bean.shiftCode"  class="form-control col-md-7 col-xs-12">
+                                    <option ng-selected="bean.shiftCode == 1"  value="1">صباحا</option>
+                                    <option  ng-selected="bean.shiftCode == 0" value="0">مساءا</option>
+                                </select>
+                            </div> 
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password">طريقة الدخول<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select ng-model="bean.loginType"  class="form-control col-md-7 col-xs-12">
+                                    <option ng-selected="bean.loginType == 1"  value="1">جوال</option>
+                                    <option  ng-selected="bean.loginType == 0" value="0">ويب</option>
+                                </select>
+                            </div> 
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <button ng-click="open()" class="btn btn-primary">Cancel</button>
+                                <button  class="btn btn-success" ng-click="saveBean()">Submit</button>
+                            </div>
+                        </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="x_panel">
+
+                            <div class="x_content">
+                                <div class="dataTables_wrapper" role="grid" >
+                                    <div  >
+
+                                        <table id="table" class="table datatable" dir="rtl">
+
+                                            <thead >
+                                                <tr >
+                                                    <th style="text-align: right">الكود</th>
+                                                    <th style="text-align: right">الإسم</th>
+                                                    <th style="text-align: right">التعليم</th>
+                                                    <th style="text-align: right">الشيفت</th>
+                                                    <th style="text-align: right">طريقة الدخول</th>
+                                                    <th style="text-align: right">الحالة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="bean in beans" ng-class="{'custom-class': bean.userType == false}">
+                                                    <td>{{ bean.id}}</td>
+                                                    <td>{{ bean.name}}</td>
+                                                    <td>{{ bean.education}}</td>
+                                                    <td>{{ bean.shiftCode?'صباحا':'مساءا'}}</td>
+                                                    <td>{{ bean.loginType==0?'ويب':'جوال'}}</td>
+
+                                                    <td>
+                                                        <button class="btn btn-primary btn-condensed" ng-click="disableUser(bean)"><i class="fa fa-edit"></i>  {{ bean.userType==true?'نشط' : 'غير نشط'}}</button>
+                                                    </td>
+                                                    <td class=" last">
+                                                        <a ng-click="selectBean(bean)" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,59 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    الزيارات
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+
+                    <form  class="form-horizontal form-label-left" novalidate>
+
+                        <span class="section">الزيارات اليومية</span>
+
+                        <div class="ln_solid"></div>
+                        <div id="map" style=" height:420px;"></div>
+<!--                        <div id="class" ng-repeat="marker in markers| orderBy : 'title'">
+                            <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+                        </div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
+
+                    <div class="x_content">
+                        <div class="dataTables_wrapper" role="grid" >
+                            <div  ng-if="dtOptions">
+
+                                <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped responsive-utilities table-condensed  jambo_table" >
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

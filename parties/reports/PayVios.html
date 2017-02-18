@@ -1,0 +1,120 @@
+<!-- page content -->
+<div class="right_col" role="main"  dir="rtl">
+   
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                   تحصيل إرادات من مالك
+                </h3>
+            </div>
+
+            
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+
+                    <form  class="form-horizontal form-label-left" novalidate>
+
+                        <span class="section">المالك</span>
+                        <div class="item form-group" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mySel">المالك <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <ui-select ng-change="getOwner(bean.ownerBean.id)" ng-model="bean.ownerBean" theme="select2"  class="form-control col-md-7 col-xs-12">
+                                    <ui-select-match placeholder="إختر إسم المالك">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices repeat=" owner in owners | propsFilter: {name: $select.search}"
+                                                       refresh="refreshOwners($select.search)"
+                                                       refresh-delay="5">
+                                        <div ng-bind-html="owner.name | highlight: $select.search"></div>
+
+                                    </ui-select-choices>
+                                </ui-select>
+
+                            </div>
+                        </div><!--/row-->
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">الإسم 
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="name" class="form-control col-md-7 col-xs-12"  value="{{owner.name}} " disabled required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nationality">الجنسية
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="nationality" class="form-control col-md-7 col-xs-12"  disabled value="{{owner.nationality}} " type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">الهاتف
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="phone" class="form-control col-md-7 col-xs-12" disabled  value="{{owner.phone}} " type="text">
+                            </div>
+                        </div>
+                       <div class="item form-group">
+                            
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+ <table id="example" class="table table-striped responsive-utilities jambo_table" dir="rtl">
+        <thead>
+        <tr class="headings">
+
+        <th style="text-align:right">الرقم</th>
+        <th style="text-align:right">التاريخ </th>
+        <th style="text-align:right">الملاحظة</th>
+        <th style="text-align:right">القيمة</th>
+        <th style="text-align:right">المراقب</th>
+        <th style="text-align:right">نوع المخالفة</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="item in beans" ng-init="i=$index">
+
+        <td>{{i+1}}</td>
+        <td>{{item.date | toHijri}}</td>
+        <td>{{item.note}}</td>
+        <td>{{item.value}}</td>
+        <td>{{item.userBean.name}}</td>
+        <td>{{item.vioType.name}}</td>
+
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+        <td class="text-center" st-pagination="" st-items-by-page="10" colspan="4">
+        </td>
+        </tr>
+        </tfoot>
+        </table>
+                            </div>
+                        </div>
+            <div class="item form-group">
+                   
+                    <button ng-click="payVios()" class="btn btn-primary">دفع المخالفات</button>
+                    <button  ng-click="changeVisits()" class="btn btn-primary">إعفاء المخالفات</button>
+
+                </div>
+                    </form>
+                 
+                </div>
+            </div>
+        </div>
+           <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <embed style="height: 1000px" class="col-md-12 col-sm-12 col-xs-12" ng-show="content" ng-src="{{content}}" ></embed>
+                     </div>
+            </div>
+    </div>
+</div>
+
+

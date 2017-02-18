@@ -1,0 +1,98 @@
+<!-- page content -->
+<div class="right_col" role="main" >
+    <div class="">
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>قياس آداء المراقبين</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <div class="item form-group" id="exSelects">
+                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="myActSel">المراقب <span class="required">*</span>
+                            </label>
+                            <div class="col-md-2 col-sm-6 col-xs-12">
+
+                                <select id="myActSel" class="form-control col-md-7 col-xs-12" ng-options="userBean as userBean.name for userBean in users" ng-model="selectedUser"  ng-selected="{{selectedUser}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                            <label class="control-label col-md-2 col-sm-3 col-xs-12" for="edu">التاريخ<span class="required">*</span>
+                            </label>
+                             <div class="col-md-6 col-sm-6 col-xs-12">
+                <select ng-model="selectedYear"  class="form-control col-md-12 col-xs-12">
+                    <option ng-repeat="element in years"  value="{{element}}">{{element}}</option>
+
+                </select>
+            </div>
+                    <button ng-click="getReport()" class="btn btn-primary">بحث</button>
+
+                        </div><!--/row-->
+                        <div class="clearfix"></div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+
+                            <ul class="stats-overview">
+                                <li>
+                                    <span class="name">مجموع المخالفات الكلية</span>
+                                    <span class="value text-success"> 2300 </span>
+                                </li>
+                                <li>
+                                    <span class="name">مجموع الزيارات الكلية</span>
+                                    <span class="value text-success"> 2000 </span>
+                                </li>
+                                <li class="hidden-phone">
+                                    <span class="name">مجموع الغرامات الكلية</span>
+                                    <span class="value text-success"> 20 </span>
+                                </li>
+                            </ul>
+                            <br />
+
+                            <div id="mainb" style="height:350px;"></div>
+
+
+
+                        </div>
+
+                        <!-- start project-detail sidebar -->
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+
+                            <section class="panel">
+
+                                <div class="x_title">
+                                    <h2>بيانات الموظف</h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-body">
+                                    <h3 class="green"><i class="fa fa-paint-brush"></i>{{selectedUser.name}}</h3>
+
+                                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+                                    <br />
+
+                                    
+                                    <br />
+                                 
+                                    <br />
+
+                                    <div class="text-center mtop20">
+                                        <a href="#" class="btn btn-sm btn-warning">تعديل بيانات المستخدم</a>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                        </div>
+                        <!-- end project-detail sidebar -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

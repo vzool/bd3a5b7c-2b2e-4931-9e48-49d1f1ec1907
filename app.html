@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="application/json; text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>الرقابة الصحية| أمانة عرعر</title>
+        <link rel="stylesheet" href="css/datatables/css/jquery.dataTables.css" />
+        <link rel="stylesheet" href="css/datatables/tools/css/dataTables.tableTools.css" />
+
+        <!-- Bootstrap core CSS -->
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <!-- Select2 theme -->
+        <link rel="stylesheet" href="css/select2.css">
+
+        <link href="css/select.css" rel="stylesheet">
+
+        <!-- Custom styling plus plugins -->
+        <link href="css/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet">
+        <link href="css/daterangepicker.css" rel="stylesheet">
+        <link href="css/datatables.bootstrap.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/icheck/flat/green.css" rel="stylesheet">
+        <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/buttons.dataTables.css">
+        <link rel="stylesheet" href="css/calendar/jquery.calendars.picker.css">
+
+        <!-- Notification Style -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href="css/animated-notifications.css" rel="stylesheet" type="text/css" />
+
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/> 
+        <link href="css/angular-growl.min.css" rel="stylesheet" media="screen"/> 
+
+        <script src="js/plugins/jquery.min.js"></script>
+
+        <script src="js/plugins/bootstrap.min.js"></script>
+        <script src="js/plugins/form2json.js"></script>
+
+        <!-- chart js -->
+        <script src="js/plugins/chartjs/chart.min.js"></script>
+        <!-- bootstrap progress js -->
+        <script src="js/plugins/progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+        <!-- icheck -->
+        <script src="js/plugins/icheck/icheck.min.js"></script>
+        <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js"></script>-->
+
+        <script src="js/plugins/custom.js"></script>
+
+        <!-- form validation -->
+        <script src="js/plugins/validator/validator.js"></script>
+        <link href="css/icheck/flat/green.css" rel="stylesheet">
+        <!-- daterangepicker -->
+
+        <!-- daterangepicker -->
+
+        <script type="text/javascript" src="js/plugins/moment.min.js"></script>
+        <script type="text/javascript" src="js/plugins/ar-sa.js"></script>
+        <script type="text/javascript" src="js/plugins/datepicker/daterangepicker.js"></script>
+
+        <!-- Notification JS-->
+        <script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
+
+    </head>
+
+
+    <body class="nav-md" ng-app="reqaba_app" ng-controller='mainPageCtrl'>
+        <!--        <div id="notifications" style="display: none">
+        
+                    <div id="notifications-bottom-center"  ></div>
+                    <div id="notifications-bottom-right"></div>
+        
+                    <div id="notifications-window">
+                        <div id="notifications-window-row-button">Submit</div>
+                    </div>
+                </div>-->
+        <div class="container body">
+
+
+            <div class="main_container">
+
+
+                <!-- top navigation -->
+                <div class="top_nav">
+
+                    <div class="nav_menu">
+                        <nav class="" role="navigation">
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+
+                            <!--  <ul class="nav navbar-nav navbar-left">
+                                 <li class="">
+                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                         <img src="images/user_placeholder.png" alt=""><?php echo $_SESSION['name'] ?>
+                                         <span class=" fa fa-angle-down"></span>
+                                     </a>
+                                     <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-left">
+                                         <li><a href="javascript:;">  Profile</a>
+                                         </li>
+                                         <li>
+                                             <a href="javascript:;">
+                                                 <span class="badge bg-red pull-right">50%</span>
+                                                 <span>Settings</span>
+                                             </a>
+                                         </li>
+                                         <li>
+                                             <a href="javascript:;">Help</a>
+                                         </li>
+                                         <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                         </li>
+                                     </ul>
+                                 </li>
+ 
+                                                                         
+   <li role="presentation" class="dropdown">
+                                     <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                         <i class="fa fa-envelope-o"></i>
+                                         <span class="badge bg-green">6</span>
+                                     </a>
+                                     <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                                         
+                                         
+                                      <li>
+                                             <a>
+                                                 <span class="image">
+                                                     <img src="images/user_placeholder.png" alt="Profile Image" />
+                                                 </span>
+                                                 <span>
+                                                     <span>John Smith</span>
+                                                     <span class="time">3 mins ago</span>
+                                                 </span>
+                                                 <span class="message">
+                                                     Film festivals used to be do-or-die moments for movie makers. They were where... 
+                                                 </span>
+                                             </a>
+                                         </li>
+                                         <li>
+                                             <div class="text-center">
+                                                 <a>
+                                                     <strong>See All Alerts</strong>
+                                                     <i class="fa fa-angle-right"></i>
+                                                 </a>
+                                             </div>
+                                         </li>
+                                     </ul>
+                                 </li>
+ 
+                             </ul>-->
+                        </nav>
+                    </div>
+
+                </div>
+
+                <!-- /top navigation -->
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.html" class="site_title"><img class="img-circle" width="50" height="50" src="images/appicon.png" /><span>نظام الرقابة الصحية </span> </a>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <!-- menu prile quick info -->
+                        <div class="profile">
+                            <div class="profile_pic">
+                                <img src="images/user_placeholder.png" alt="..." class="img-circle profile_img">
+                            </div>
+                            <div class="profile_info">
+                                <span>مرحبا</span>
+                                <h2 >{{user.body.user.name}}</h2>
+                            </div>
+                        </div>
+                        <!-- /menu prile quick info -->
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+                            <div class="menu_section">
+                                <div class="clearfix"></div>
+                                <ul class="nav side-menu">
+
+                                    <li><a><i class="fa fa-sitemap"></i>قاعدة بيانات البرنامج<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+
+                                            <!--<li><a href="#/addowner"><span class="xn-text">إضافة مالك</span><span class="fa fa-image"></span></a></li>-->
+                                            <li><a href="#/showowner"><span class="xn-text">بيانات الملاك</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/activity"><span class="xn-text">بيانات نشاطات المحلات</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/district"><span class="xn-text">بيانات الأحياء</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/vioType"><span class="xn-text">لائحة المخالفات </span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/unitType"><span class="xn-text">قائمة الوحدات </span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/users"><span class="xn-text">المستخدمين</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/orgs"><span class="xn-text">إضافة منشآة جديدة</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/closeorg"><span class="xn-text">تغيير حالة المنشآة الى مغلق</span><span class="fa fa-close"></span></a></li>
+
+
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-area-chart"></i>مهام البرنامج<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="#/addvisit"><span class="xn-text">إضافة زيارة</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/addvisits"><span class="xn-text">إضافة زيارات بالمنطقه</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/userchangevisits"><span class="xn-text">تبدل زيارات مراقب</span><span class="fa fa-send-o"></span></a></li>
+                                            <li><a href="#/addmessage"><span class="xn-text">إرسال التعاميم والمعاملات للمراقبين</span><span class="fa fa-send-o"></span></a></li>
+                                            <li><a href="#/payvio"><span class="xn-text">تحصيل إرادات</span><span class="fa fa-send-o"></span></a></li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li><a><i class="fa fa-area-chart"></i>تقارير البرنامج<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="#/emphist"><span class="xn-text">تقرير  المراقبين</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/showvisits"><span class="xn-text"> الزيارات اليومية على الخريطة</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/showvisitsdate"><span class="xn-text"> الزيارات اليومية المنتهية</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/showvisitsreport"><span class="xn-text">المخالفات اليومية /فترة لكل منشآه</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/showvisitsevi"><span class="xn-text">الإتلافيات اليومية / فترة</span><span class="fa fa-image"></span></a></li>
+                                            <li><a href="#/showvisitsvio"><span class="xn-text">زيارات بالمخالفات</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/repmonth"><span class="xn-text">تقرير سنوى</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/rephalfmonth"><span class="xn-text">تقرير نصف سنوى</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/repquartmonth"><span class="xn-text">تقرير ربع سنوى</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/repemp"><span class="xn-text">تقارير المراقبين</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/finishedmuni"><span class="xn-text">بحث عن الرخص  المنتهية</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/loginfail"><span class="xn-text">محاولات الدخول الى النظام</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/empkpi"><span class="xn-text"> قياس آداء المراقبين</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/reptotal"><span class="xn-text">تقرير إجمالى</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/empactions"><span class="xn-text">تتبع عمليات المراقبين</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/finishedemp"><span class="xn-text">الشهادات المنتهية للموظفين</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/ownerorgs"><span class="xn-text">عرض منشآت المالك</span><span class="fa fa-tag"></span></a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-search"></i> البحث<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li><a href="#/showorgs"><span class="xn-text">عن طريق موقع المنشآة</span><span class="fa fa-globe"></span></a></li>
+                                            <li><a href="#/orgsbyactivity"><span class="xn-text">عن طريق نشاط المنشآة</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/showorgsevi"><span class="xn-text">على مستوى الإتلافية</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/showorgsvio"><span class="xn-text">عن طريق لائحة المخالفات</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/showorgswarn"><span class="xn-text">عن طريق الإنذارات</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/showorgsclosed"><span class="xn-text">عن حالة المنشآة</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/ownersearch"><span class="xn-text">عن طريق المالك</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/orglic"><span class="xn-text">عن طريق رقم الرخصة</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/orghist"><span class="xn-text">تاريخ المنشآة</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/orgclosehist"><span class="xn-text">تاريخ اغلاق المنشآة</span><span class="fa fa-tag"></span></a></li>
+                                            <li><a href="#/userfuvisits"><span class="xn-text">الزيارات المستقبلية للمراقب</span><span class="fa fa-tag"></span></a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <!-- /sidebar menu -->
+
+
+                        <!-- /menu footer buttons -->
+                        <div class="sidebar-footer hidden-small">
+                            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </a>
+                            <a href="login.html" data-toggle="tooltip" data-placement="top" title="Logout">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- /menu footer buttons -->
+                    </div>
+
+                </div>  
+
+                <div growl></div>
+                <div ng-view>
+
+
+                </div>
+                <!-- footer content -->
+                <footer>
+                    <div style="margin-right: 240px">
+                        <span class="lead pull-right"> <i class="fa fa-edit"></i>الرقابة الصحية</span>
+                        </p>
+                    </div>
+                    <!--<div class="clearfix"></div>-->
+                </footer>
+                <!-- /footer content -->
+
+            </div>
+            <!-- /page content -->
+
+        </div>
+
+
+        <div id="custom_notifications" class="custom-notifications dsp_none">
+            <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+            </ul>
+            <div class="clearfix"></div>
+            <div id="notif-group" class="tabbed_notifications"></div>
+        </div>
+
+
+        <script src="js/plugins/calendar/jquery.plugin.js"></script>
+        <!--<script src="jquery.calendars.all.js"></script><!-- Use instead of calendars, plus, and picker below -->
+        <script src="js/plugins/calendar/jquery.calendars.js"></script>
+        <script src="js/plugins/calendar/jquery.calendars.plus.js"></script>
+        <script src="js/plugins/calendar/jquery.calendars.picker.js"></script>
+        <!--<script src="jquery.calendars.picker.ext.js"></script><!-- Include for ThemeRoller styling -->
+        <script src="js/plugins/calendar/jquery.calendars.ummalqura.js"></script>
+        <script src="js/plugins/calendar/jquery.calendars.ummalqura-ar.js"></script>
+        <!-- Table Export -->
+        <script type="text/javascript" src="js/tableexport/tableExport.js"></script>
+        <script type="text/javascript" src="js/tableexport/jquery.base64.js"></script>
+        <script type="text/javascript" src="js/tableexport/html2canvas.js"></script>
+        <script type="text/javascript" src="js/tableexport/jspdf/libs/sprintf.js"></script>
+        <script type="text/javascript" src="js/tableexport/jspdf/jspdf.js"></script>
+        <script type="text/javascript" src="js/tableexport/jspdf/libs/base64.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js"></script>
+
+
+        <!-- START TEMPLATE -->
+        <script type="text/javascript" src="js/plugins.js"></script>        
+        <script type="text/javascript" src="js/actions.js"></script>
+
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+        <script type="text/javascript" src="js/angular.ui.bootstrap.js"></script> 
+        <script src="js/angular-sanitize.js"></script>
+        <script type="text/javascript" src="js/select.js"></script>
+
+        <script type="text/javascript" src="js/plugins/angular-moment-hijri.min.js"></script>
+        <!-- START APP SCRIPTS -->
+        <script src="app.js" type="text/javascript" ></script>
+        <script src="parties/CRUDService.js" type="text/javascript" ></script>
+        <script src="parties/VISITService.js" type="text/javascript" ></script>
+        <script src="parties/UserServices.js" type="text/javascript" ></script>
+        <script src="js/angular-datatable.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="js/angular-base64.js"></script>
+        <script type="text/javascript"  src="js/plugins/datatables/tools/js/dataTables.tableTools.js"></script>
+        <script type="text/javascript"  src="js/angular-datatables.tabletools.min.js"></script>
+        <script type="text/javascript"  src="js/angular-datatables.buttons.min.js"></script>
+        <!--        <script src="js/buttons/buttons.colVis.js"></script>
+                <script src="js/buttons/buttons.flash.js"></script>
+                <script src="js/buttons/buttons.html5.js"></script>-->
+        <script src="js/buttons/buttons.print.js"></script>
+        <script type="text/javascript"  src="js/angular-datatables.bootstrap.min.js"></script>
+        <script src="js/angular-bootstrap-file-field.min.js" type="text/javascript" ></script>
+        <script type="text/javascript" src="js/ngStorage.min.js"></script>
+        <script type="text/javascript" src="js/angular-animate.js"></script>
+        <script type="text/javascript" src="js/angular-growl.min.js"></script>
+        <script src="js/plugins/echart/echarts.min.js"></script>
+
+        <script src="parties/ItemType/ItemTypeController.js" type="text/javascript" ></script>
+        <script src="parties/Activity/ActivityController.js" type="text/javascript" ></script>
+        <script src="parties/District/DistrictController.js" type="text/javascript" ></script>
+        <script src="parties/Violation/ViolationTypeController.js" type="text/javascript" ></script>
+        <script src="parties/units/UnitTypeController.js" type="text/javascript" ></script>
+        <script src="parties/Users/UsersController.js" type="text/javascript" ></script>
+        <script src="parties/Users/UserChangeVisitsController.js" type="text/javascript" ></script>
+        <script src="parties/Org/OrgController.js" type="text/javascript" ></script>
+        <script src="parties/Org/CloseOrgController.js" type="text/javascript" ></script>
+        <script src="parties/Org/ShowOrgController.js" type="text/javascript" ></script>
+        <script src="parties/Visits/ShowVisitsController.js" type="text/javascript" ></script>
+        <script src="parties/Visits/ShowVisitsDateController.js" type="text/javascript" ></script>
+        <script src="parties/Visits/ShowVisitsVioController.js" type="text/javascript" ></script>
+        <script src="parties/reports/ShowOrgsVioController.js" type="text/javascript" ></script>
+        <script src="parties/Org/ShowOrgsEviController.js" type="text/javascript" ></script>
+        <script src="parties/Org/ShowOrgsWarnController.js" type="text/javascript" ></script>
+        <script src="parties/Org/ShowOrgsClosedController.js" type="text/javascript" ></script>
+        <script src="parties/reports/OwnerSearch.js" type="text/javascript" ></script>
+        <script src="parties/reports/FinishedMuniController.js" type="text/javascript" ></script>
+        <script src="parties/reports/OrgLicenseController.js" type="text/javascript" ></script>
+        <script src="parties/reports/ShowVisitsReportController.js" type="text/javascript" ></script>
+        <script src="parties/reports/ShowVisitsEviController.js" type="text/javascript" ></script>
+        <script src="parties/reports/RepMonthController.js" type="text/javascript" ></script>
+        <script src="parties/reports/RepMonthQurtController.js" type="text/javascript" ></script>
+        <script src="parties/reports/RepMonthHalfController.js" type="text/javascript" ></script>
+        <script src="parties/reports/RepTotalController.js" type="text/javascript" ></script>
+        <script src="parties/reports/RepEmpController.js" type="text/javascript" ></script>
+        <script src="parties/reports/OrgHistoryController.js" type="text/javascript" ></script>
+        <script src="parties/reports/OrgCloseHistoryController.js" type="text/javascript" ></script>
+        <script src="parties/reports/UserFutureVisitsController.js" type="text/javascript" ></script>
+        <script src="parties/reports/UserLoginFailController.js" type="text/javascript" ></script>
+        <script src="parties/reports/EmpKPIController.js" type="text/javascript" ></script>
+        <script src="parties/reports/EmpHistoryController.js" type="text/javascript" ></script>
+        <script src="parties/reports/UserActionsController.js" type="text/javascript" ></script>
+        <script src="parties/reports/FinishedEmpController.js" type="text/javascript" ></script>
+        <script src="parties/reports/PayViosController.js" type="text/javascript" ></script>
+        <script src="parties/reports/OwnerOrgs.js" type="text/javascript" ></script>
+
+        <script src="parties/Visits/AddVisitController.js" type="text/javascript" ></script>
+        <script src="parties/Visits/AddVisitByActivityController.js" type="text/javascript" ></script>
+        <script src="parties/Messages/AddMessageController.js" type="text/javascript" ></script>
+        <script type="text/javascript" src="parties/Org/OrgsByActivityCtrl.js" ></script>
+        <script src="IndexController.js" type="text/javascript" ></script>
+        <script type="text/ng-template" id="myModalContent.html" src="parties/CustomModal.html" ></script>
+        <script type="text/javascript" src="parties/CustomModal.js" ></script>
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

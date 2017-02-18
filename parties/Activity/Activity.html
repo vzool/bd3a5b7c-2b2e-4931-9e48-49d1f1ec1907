@@ -1,0 +1,99 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    النشاط
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                    <div class="x_content">
+
+                        <form  class="form-horizontal form-label-left" novalidate>
+
+                            <span class="section">إضافة نشاط</span>
+
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">الاسم <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"  ng-model="bean.name"  placeholder="إسم النشاط" required="required" type="text">
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">الأولوية <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select ng-model="bean.pirority"  class="form-control col-md-7 col-xs-12">
+                                        <option ng-selected="bean.pirority==1"  value="1">بالغ الأهمية</option>
+                                        <option  ng-selected="bean.pirority==2" value="2">متوسط الأهمية</option>
+                                        <option  ng-selected="bean.pirority==3" value="3">أقل أهمية</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <button type="submit" class="btn btn-primary">Cancel</button>
+                                    <button  class="btn btn-success" ng-click="saveBean()">Submit</button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                <div class="x_panel">
+
+                                    <div class="x_content">
+                                        <table id="example" class="table table-striped responsive-utilities jambo_table" dir="rtl">
+                                            <thead>
+                                                <tr class="headings">
+
+                                                    <th style="text-align: right">الكود </th>
+                                                    <th style="text-align: right">النشاط</th>
+                                                    <th style="text-align: right">الأهمية</th>
+
+                                                    <th class=" no-link last" style="text-align: right"><span class="nobr">Action</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr ng-repeat="bean in beans">
+
+                                                    <td>{{bean.id}}</td>
+                                                    <td>{{bean.name}}</td>
+                                                    <td>{{bean.pirority==1?'بالغ الأهمية':bean.pirority==2?'متوسط الأهمية':'أفل أهمية'}}</td>
+
+                                                    <td class=" last">
+                                                        <a ng-click="selectBean(bean)" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

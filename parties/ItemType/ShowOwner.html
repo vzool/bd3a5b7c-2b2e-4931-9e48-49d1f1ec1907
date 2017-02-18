@@ -1,0 +1,74 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    بيانات الملاك
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
+
+                    <div class="x_content">
+                        <table width="100%">
+                            <tr>
+                                <td width="33%">
+                                    <a href="#/addowner" style="position:relative;float: right; margin-bottom: 1em;" class="btn btn-primary">إضافة مالك</a>
+                                </td>
+                                <td  width="34%" align="center">عدد  السجلات {{numberOfElements}} من {{ totalElements }}</td>
+                                <td  width="33%" align="left">الصفحة {{currentPageNumber}} من {{totalPages}} صفحة</td>
+                            </tr>
+                        </table>
+                        
+                        <table id="example" class="table table-striped responsive-utilities jambo_table" dir="rtl">
+                            <thead>
+                                <tr align="center" class="headings">
+
+                                    <th>الكود </th>
+                                    <th>الإسم </th>
+                                    <th>الجنسية</th>
+                                    <th>رقم الهوية</th>
+                                    <th>رقم الهاتف</th>
+
+                                    <th class=" no-link last"><span class="nobr">Action</span>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr align="center" ng-repeat="bean in beans">
+
+                                    <td align="center">{{bean.id}}</td>
+                                    <td align="center">{{bean.name}}</td>
+                                    <td align="center">{{bean.nationality}}</td>
+                                    <td align="center">{{bean.identity}}</td>
+                                    <td align="center">{{bean.phone}}</td>
+                                    <td class=" last">
+                                        <a href="#/ownerorgs/{{bean.id}}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="text-center" st-pagination="" st-items-by-page="10" colspan="6">
+                                        <a class="btn btn-primary" ng-Disabled="currentPageNumber == 1" ng-click="previousPage()">&lt;&nbsp;&nbsp;السابق</a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a class="btn btn-primary" ng-Disabled="currentPageNumber == totalPages"  ng-click="nextPage()">التالي&nbsp;&nbsp;&gt;</a>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<!-- page content -->
+<div class="right_col" role="main" >
+    <div class="">
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>تقرير إجمالى للمراقب</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <div class="item form-group" id="exSelects">
+                            <label class="control-label col-md-1 col-sm-3 col-xs-12" for="myActSel">المراقب <span class="required">*</span>
+                            </label>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+
+                                <select id="myActSel" class="form-control col-md-7 col-xs-12" ng-options="userBean as userBean.name for userBean in users" ng-model="selectedUser"  ng-selected="{{selectedUser}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                           
+                    <button ng-click="getReport()" class="btn btn-primary">بحث</button>
+
+                        </div><!--/row-->
+                        <div class="clearfix"></div>
+                     
+                       <div class="row">
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-check-square-o"></i>
+                          </div>
+                          <div class="count">{{empActions.visitCount}}</div>
+
+                          <h3>الزيارات</h3>
+                          <p>عدد الزيارات المنتهية</p>
+                        </div>
+                      </div>
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-ban"></i>
+                          </div>
+                          <div class="count">{{empActions.violationCount}}</div>
+
+                          <h3>المخالفات</h3>
+                          <p>عدد المخالفات</p>
+                        </div>
+                      </div>
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-exclamation-triangle"></i>
+                          </div>
+                          <div class="count">{{empActions.alarmCount}}</div>
+
+                          <h3>الإنذارات</h3>
+                          <p>عدد الإنذارات</p>
+                        </div>
+                      </div>
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-money"></i>
+                          </div>
+                          <div class="count">{{empActions.violationCost}}</div>
+
+                          <h3>الغرامات</h3>
+                          <p>قيمة الغرامات بالريال</p>
+                        </div>
+                      </div>
+                            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-database"></i>
+                          </div>
+                          <div class="count">{{empActions.kiloUnitCount}}</div>
+
+                          <h3>اتلافيات بالكيلو</h3>
+                          <p>اتلافيات مواد غذائية بالكيلو</p>
+                        </div>
+                      </div>
+                            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-database"></i>
+                          </div>
+                          <div class="count">{{empActions.litreUnitCount}}</div>
+
+                          <h3>اتلافيات باللتر</h3>
+                          <p>اتلافيات مستحضرات وسوائل باللتر</p>
+                        </div>
+                      </div>
+                       <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-bug"></i>
+                          </div>
+                          <div class="count">{{empActions.closeCount}}</div>
+
+                          <h3>اغلاق</h3>
+                          <p>عدد المنشآت المغلقة</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

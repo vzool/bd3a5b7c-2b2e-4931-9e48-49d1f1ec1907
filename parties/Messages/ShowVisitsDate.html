@@ -1,0 +1,72 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    الزيارات
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edu">التاريخ<span class="required">*</span>
+                    </label>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <input id="fromDate" class="date-picker form-control col-md-7 col-xs-12"   ng-model="searchBean.fromDate | toHijri"  placeholder="من" required="required" type="text">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <input id="toDate" class="date-picker form-control col-md-7 col-xs-12"   ng-model="searchBean.toDate | toHijri"  placeholder="الى" required="required" type="text">
+                    </div>
+                    <button ng-click="getBeansWithDate()" class="btn btn-primary">بحث</button>
+
+                </div>
+                <div class="x_panel">
+
+
+                    <span class="section">الزيارات اليومية</span>
+
+                    <form  class="form-horizontal form-label-left" novalidate>
+
+
+                        <div id="map" style=" height:420px;"  ></div>
+                        <!--                        <div id="class" ng-repeat="marker in markers| orderBy : 'title'">
+                                                    <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+                                                </div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
+
+                    <div class="x_content">
+                        <div class="dataTables_wrapper" role="grid" >
+                            <div  ng-if="dtOptions">
+
+                                <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped responsive-utilities table-condensed  jambo_table" >
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

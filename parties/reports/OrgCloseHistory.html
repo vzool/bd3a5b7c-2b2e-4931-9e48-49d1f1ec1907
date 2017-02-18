@@ -1,0 +1,224 @@
+<!-- page content -->
+<div class="right_col" role="main" >
+
+    <script type="text/ng-template" id="myModalImg.html"> 
+        <div class="modal-header">
+        <h3 class="modal-title" dir="rtl">بيان الحركات</h3>
+        </div>
+        <div class="modal-body">
+
+        <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>
+                    المنشآت
+                </h3>
+            </div>
+
+            <div class="title_right">
+                <!--<pre>Model: {{bean | json}}</pre>-->
+                <!--                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group" >
+                                        <input type="text" ng-model="bean"   typeahead-on-select="onSelect($item, $model, $label)" uib-typeahead="org as org.name for org in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+                                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                                        <span class="input-group-btn">
+                                            <button id="test" class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                
+                                    </div>
+                
+                                    <div class="pull-right" ng-show="noResults">
+                                        <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                    </div>
+                
+                                </div>-->
+                <div class="col-md-12 col-sm-12 col-xs-12 pull-right ">
+                    <div class="item form-group" id="exSelects">
+
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="mySel">بحث بالإسم
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                            <ui-select ng-change="onSelect(bean.id)" ng-model="bean" theme="select2"  class="form-control col-md-7 col-xs-12">
+                                <ui-select-match placeholder="إختر إسم المنشآة">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat=" org in orgs | propsFilter: {name: $select.search}"
+                                                   refresh="refreshOrgs($select.search)"
+                                                   refresh-delay="5">
+                                    <div ng-bind-html="org.name | highlight: $select.search" ></div>
+
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </div>
+
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="mySel">بحث برقم الشهادة
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                            <ui-select ng-change="onSelect(bean.id)" ng-model="bean" theme="select2"  class="form-control col-md-7 col-xs-12">
+                                <ui-select-match placeholder="إختر رقم البطاقة">{{$select.selected.orgCode}}</ui-select-match>
+                                <ui-select-choices repeat=" org in orgs | propsFilter: {orgCode : $select.search}"
+                                                   refresh="refreshCode($select.search)"
+                                                   refresh-delay="5">
+                                    <div ng-bind-html="org.orgCode | highlight: $select.search "></div>
+
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </div>
+                    </div><!--/row-->
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <form  class="form-horizontal form-label-left" novalidate>
+
+                        <span class="section"> بيانات المنشأة</span>
+                        <div class="item form-group" >
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" > صورة البطاقة الصحية
+                            </label>
+
+
+                            <div class="col-sm-3" ng-show="!muniImageBytes">
+                                <img ng-src="{{bean.muniImage.name}}" width="50">
+                                <br>
+                            </div>
+                        </div>
+                        <div class="item form-group" >
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" > صورة المنشآة
+                            </label>
+
+
+                            <div class="col-sm-3" ng-show="!orgImageBytes">
+                                <img  src="{{bean.orgImage.name}}" width="50">
+                                <br>
+                            </div>
+
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">إسم  <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input disabled id="name" class="form-control col-md-7 col-xs-12"   ng-model="bean.name"  placeholder="إسم المنشأة" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edu">الإحداثيات<span class="required">*</span>
+                            </label>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <input disabled  id="edu" class="form-control col-md-7 col-xs-12"   ng-model="bean.lat"  placeholder="خط العرض" required="required" type="text">
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <input disabled  id="edu" class="form-control col-md-7 col-xs-12"   ng-model="bean.lon"  placeholder="خط الطول" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" >رقم البطاقة  
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input disabled  class="form-control col-md-7 col-xs-12"   ng-model="bean.orgCode"  placeholder="رقم البطاقة الصحية" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">تاريخ بداية البطاقة  <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input disabled id="muniFromDate" class="date-picker form-control col-md-7 col-xs-12" ng-model="bean.muniFromDate | toHijri"  required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">تاريخ إنتهاء البطاقة<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input disabled id="muniToDate" class="date-picker form-control col-md-7 col-xs-12" ng-model="bean.muniToDate | toHijri" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myActSel">النشاط 
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myDistSel">{{bean.activityBean.name}}
+                                </label>
+                            </div>
+                        </div><!--/row-->
+                        <div class="item form-group" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myDistSel">الحى 
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myDistSel">{{bean.districtBean.name}} 
+                                </label>
+                            </div>
+
+
+                        </div><!--/row-->
+
+                        <div class="item form-group">
+
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <table id="example" class="table table-striped responsive-utilities jambo_table" dir="rtl">
+                                    <thead>
+                                        <tr class="headings">
+
+                                            <th style="text-align:right">الرقم</th>
+                                            <th style="text-align:right">التاريخ </th>
+                                            <th style="text-align:right">التفاصيل</th>
+                                            <th style="text-align:right">النوع</th>
+                                            <th style="text-align:right">تاريخ الفتح</th>
+                                            <th style="text-align:right">المراقب</th>
+                                            <th style="text-align:right">السبب</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="item in items" ng-init="i = $index">
+
+                                            <td>{{i + 1}}</td>
+                                            <td>{{item.actionDate| toHijri}}</td>
+                                            <td>{{item.status?'فتح':'اغلاق'}}</td>
+                                            <td>{{item.permenant?'اغلاق دائم':'اغلاق مؤقت'}}</td>
+                                            <td>{{item.actionToDate| toHijri}}</td>
+                                            <td>{{item.actionUser.name}}</td>
+                                            <td>{{item.remark}}</td>
+
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="text-center" st-pagination="" st-items-by-page="10" colspan="4">
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,84 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                      تتبع عمليات المراقبين
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                     <div class="item form-group col-md-12 col-sm-12" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myActSel"> المراقب <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select id="myActSel" ng-change="test()" class="form-control col-md-6 col-xs-6" ng-options="user as user.name for user in users" ng-model="selectedUser" ng-selected="{{selectedUser}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                            
+                        </div><!--/row-->
+                           
+                <div class="item form-group">
+                   
+                    <button ng-click="getActionsBeans()" class="btn btn-primary">بحث</button>
+
+                </div>
+               
+            </div>
+              <div class="item form-group">
+                            
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+ <table id="example" class="table table-striped responsive-utilities jambo_table" dir="rtl">
+        <thead>
+        <tr class="headings">
+
+        <th style="text-align:right">الرقم</th>
+        <th style="text-align:right">تاريخ إضافة الزيارة </th>
+        <th style="text-align:right">تاريخ الزيارة</th>
+        <th style="text-align:right">الوقت</th>
+        <th style="text-align:right">المنشآة</th>
+        <th style="text-align:right">التفاصيل</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="item in beans" ng-init="i=$index">
+
+        <td>{{i+1}}</td>
+        <td>{{item.date | toHijri}}</td>
+        <td>{{item.visitDate | toHijri}}</td>
+        <td>{{item.visitDate | toHijriTime}}</td>
+        <td>{{item.orgnizationName}}</td>
+        <td>{{item.actionType |actionType}}</td>
+
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+        <td class="text-center" st-pagination="" st-items-by-page="10" colspan="4">
+        </td>
+        </tr>
+        </tfoot>
+        </table>
+                            </div>
+                        </div>
+         
+        </div>
+
+
+
+
+
+        
+    </div>
+</div>

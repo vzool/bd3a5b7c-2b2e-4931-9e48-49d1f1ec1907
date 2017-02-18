@@ -1,0 +1,76 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    الزيارات المستقبلية
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                     <div class="item form-group col-md-12 col-sm-12" id="exSelects">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myActSel">المستخدم <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <select id="myActSel"  class="form-control col-md-6 col-xs-6" ng-options="user as user.name for user in users" ng-model="selectedUser" ng-selected="{{selectedUser}}" >
+                                    <!--<option  value="{{activity.id}}">{{activity.name}}</option>-->
+                                </select>
+                            </div>
+                            
+                        </div><!--/row-->
+                <div class="item form-group">
+                   
+                    <button ng-click="getVisitsBeans()" class="btn btn-primary">بحث</button>
+
+                </div>
+                <div class="x_panel">
+
+
+                    <span class="section">الزيارات </span>
+
+                    <form  class="form-horizontal form-label-left" novalidate>
+
+
+                        <div id="map3" style=" height:420px;"  ></div>
+                        <!--                        <div id="class" ng-repeat="marker in markers| orderBy : 'title'">
+                                                    <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+                                                </div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
+
+                    <div class="x_content">
+                        <div class="dataTables_wrapper" role="grid" >
+                            <div  ng-if="dtOptions">
+
+                                <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped responsive-utilities table-condensed  jambo_table" >
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
