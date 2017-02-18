@@ -101,9 +101,9 @@ app.config(['$routeProvider', 'growlProvider', function ($routeProvider, growlPr
     }]);
 
 
-//app.value('setting', {connection: {url: 'http://78.93.180.115:8080/reqaba/', webURL: 'http://reqabaweb.com/', user: null, sessionId: ''}});
+app.value('setting', {connection: {url: 'http://reqabaweb.com:8080/reqaba/', webURL: 'http://reqabaweb.com/', user: null, sessionId: ''}});
 // app.value('setting', {connection: {url: 'http://78.93.180.115:8080/reqaba/', webURL: 'http://localhost:8383/ReqabaWeb/', user: null, sessionId: ''}});
-app.value('setting', {connection: {url: 'http://127.0.0.1:8080/ReqabaServer/', webURL: 'http://localhost:8000/', user: null, sessionId: ''}});
+// app.value('setting', {connection: {url: 'http://127.0.0.1:8080/ReqabaServer/', webURL: 'http://localhost:8000/', user: null, sessionId: ''}});
 
 app.controller('mainPageCtrl', function ($scope, setting, $localStorage, UserServices) {
     console.log($localStorage.$default().user.body.token);
