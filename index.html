@@ -1,9 +1,18 @@
 <html>
     <head>
         <!-- <meta http-equiv="refresh" content="0; url=http://reqabaweb.com/login.html" /> -->
-        <meta http-equiv="refresh" content="0; url=http://localhost:8000/login.html" />
+        <!-- <meta http-equiv="refresh" content="0; url=http://localhost:8000/login.html" /> -->
+        <script type="text/javascript">
+        	window.onload = function(){
+        		setTimeout(function(){
+        			if(location.host == "reqabaweb.com" || location.host == "reqabaweb.net" ){
+        				location.href = location.protocol + '//' + location.host + '/';
+        			}else{
+        				location.href = 'http://localhost:8000/login.html';
+        			}
+        		}, 0);
+        	};
+        </script>
     </head>
-    <body>
-        
-    </body>
+    <body></body>
 </html>

@@ -1,0 +1,95 @@
+<!-- page content -->
+<div class="right_col" role="main" dir="rtl">
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_right">
+                <h3>
+                    أنواع أفضلية المهام
+                </h3>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                    <div class="x_content">
+
+                        <form  class="form-horizontal form-label-left" novalidate>
+
+                            <span class="section">إضافة نوع الأهمية</span>
+
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">الاسم <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="priority_name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"  ng-model="bean.name"  placeholder="اسم نوع الأهمية" required="required" type="text">
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pirority_days">عدد الأيام لكل دورة <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="priority_days" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"  ng-model="bean.days"  placeholder="عدد الأيام لكل دورة (2,1, ... إلخ)" required="required" type="number">
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <button type="submit" class="btn btn-primary" ng-click="resetFields()">إلغاء</button>
+                                    <button  class="btn btn-success" ng-click="saveBean()">حفظ</button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                <div class="x_panel">
+
+                                    <div class="x_content">
+                                        <table id="example" class="table table-striped responsive-utilities jambo_table" dir="rtl">
+                                            <thead>
+                                                <tr class="headings">
+
+                                                    <th style="text-align: right">الكود </th>
+                                                    <th style="text-align: right">نوع الأهمية</th>
+                                                    <th style="text-align: right">عدد دورة الأيام</th>
+
+                                                    <th class=" no-link last" style="text-align: right"><span class="nobr">الأوامر</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr ng-repeat="bean in beans">
+
+                                                    <td>{{bean.id}}</td>
+                                                    <td>{{bean.name}}</td>
+                                                    <td>{{bean.days}}</td>
+
+                                                    <td class=" last">
+                                                        <a ng-click="selectBean(bean)" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

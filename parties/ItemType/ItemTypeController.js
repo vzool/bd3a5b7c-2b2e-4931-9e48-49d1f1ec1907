@@ -88,7 +88,7 @@ app.controller('itemTypeCont', ['$scope', '$http', 'CRUDServices', '$routeParams
                 location.href = "#/showowner";
             }).error(function(data){
                 growl.error('الخادم رفض الطلب: البيانات ناقصة أو غير صحيحة', {title: 'فشلت العملية'});
-            });;
+            });
         }
         $scope.resetFields();
     }

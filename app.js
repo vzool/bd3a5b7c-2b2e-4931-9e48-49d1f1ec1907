@@ -50,6 +50,7 @@ app.config(['$routeProvider', 'growlProvider', function ($routeProvider, growlPr
                 .when('/addowner', {templateUrl: 'parties/ItemType/AddOwner.html', controller: 'itemTypeCont'})
                 .when('/showowner', {templateUrl: 'parties/ItemType/ShowOwner.html', controller: 'itemTypeCont'})
                 .when('/activity', {templateUrl: 'parties/Activity/Activity.html', controller: 'activityCont'})
+                .when('/priority', {templateUrl: 'parties/Priority/Priority.html', controller: 'priorityCont'})
                 .when('/district', {templateUrl: 'parties/District/District.html', controller: 'districtCont'})
                 .when('/vioType', {templateUrl: 'parties/Violation/ViolationType.html', controller: 'vioTypeCont'})
                 .when('/unitType', {templateUrl: 'parties/units/UnitType.html', controller: 'unitTypeCtrl'})
@@ -100,8 +101,34 @@ app.config(['$routeProvider', 'growlProvider', function ($routeProvider, growlPr
 
     }]);
 
+var setting = {};
 
-app.value('setting', {connection: {url: 'http://reqabaweb.com:8080/reqaba/', webURL: 'http://reqabaweb.com/', user: null, sessionId: ''}});
+if(location.host == "reqabaweb.com" || location.host == "reqabaweb.net" ){
+
+    setting = {
+        connection: {
+            url: location.protocol + '//' + location.host + ':8080/reqaba/',
+            webURL: location.protocol + '//' + location.host + '/',
+            user: null,
+            sessionId: ''
+        }
+    };
+
+}else{
+    
+    setting = {
+        connection: {
+            url: 'http://localhost:8080/reqaba/',
+            webURL: 'http://localhost:8000/',
+            user: null,
+            sessionId: ''
+        }
+    };
+}
+
+console.log('setting', setting);
+app.value('setting', setting);
+
 // app.value('setting', {connection: {url: 'http://78.93.180.115:8080/reqaba/', webURL: 'http://localhost:8383/ReqabaWeb/', user: null, sessionId: ''}});
 // app.value('setting', {connection: {url: 'http://127.0.0.1:8080/ReqabaServer/', webURL: 'http://localhost:8000/', user: null, sessionId: ''}});
 

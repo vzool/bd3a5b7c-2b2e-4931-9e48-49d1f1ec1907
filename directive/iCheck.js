@@ -14,8 +14,7 @@ app.directive('icheck', function () {
                 return scope.$apply(function() {
                     return ngModel.$setViewValue(value);
                 });
-
-
+                
             });
         }
     }
