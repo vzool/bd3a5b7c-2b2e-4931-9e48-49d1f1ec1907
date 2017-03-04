@@ -32,7 +32,7 @@
         <script type="text/javascript" src="js/angular-route.min.js"></script>
         <script type="text/javascript" src="js/ngStorage.min.js"></script>
         <script type="text/javascript" src="js/angular.ui.bootstrap.js"></script> 
- <script src="js/angular-sanitize.js"></script>
+        <script src="js/angular-sanitize.js"></script>
         <script type="text/javascript" src="js/select.js"></script>
         <script src="app.js" type="text/javascript" ></script>
         <script src="parties/UserServices.js" type="text/javascript" ></script>
@@ -62,7 +62,15 @@
               <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
               <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
-
+        <style type="text/css">
+            .login_content{
+                padding: 0;
+                margin: 0;
+            }
+            #wrapper{
+                width: 385px;
+            }
+        </style>
     </head>
 
     <body  ng-app="reqaba_app" style="background:#F7F7F7;" >
@@ -74,11 +82,13 @@
             <div id="wrapper">
                 <div id="login" class="animate form">
                     <section class="login_content">
+                        <center>
+                            <img width="256px" src="images\logo.jpg">
+                        </center>
                         <div class="alert alert-danger" ng-show="isLoginFailed" role="alert">لا يمكنك تسجيل الدخول الى النظام</div>
 
                         <form >
-                            <h1>نظام الرقابة الصحية الإلكترونية</h1>
-                            <h3>أمانة الحدود الشمالية</h3>
+                            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;نظام الرقابة الصحية الإلكترونية&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
                             <div>
                                 <input type="text" class="form-control" name="username" placeholder="أسم المستخدم" required=""  ng-model="user.name" />
                             </div>
@@ -95,9 +105,7 @@
                                 <div class="clearfix"></div>
                                 <br />
                                 <div>
-                                    <h1><i class="fa fa-paw" style="font-size: 26px;"></i> الرقابة الصحية</h1>
-
-                                    <p>©2015 All Rights Reserved. !</p>
+                                    <p>حقوق الطبع محفوظة للمؤلف 2015 &copy;</p>
                                 </div>
                             </div>
                         </form>
