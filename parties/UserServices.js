@@ -8,15 +8,16 @@ app.factory('UserServices' ,function($http,setting){
     
     var serviceUrl = setting.connection.url;
     var session = setting.connection.sessionId;
-    
-    
 
     obj.login = function (bean){
-        return $http.post(serviceUrl+'auth/login' ,'', {headers: { 'X-User-Name': bean.name,'X-Password': bean.password,'X-Login':0}});
-
+        return $http.post(serviceUrl + 'auth/login', '', {
+			headers: { 
+				'X-User-Name': bean.name,
+				'X-Password': bean.password,
+				'X-Login': 0
+			}
+    	});
     };
- 
-    
 
     return obj ;
 });

@@ -107,7 +107,7 @@ if(location.host == "reqabaweb.com" || location.host == "reqabaweb.net" ){
 
     setting = {
         connection: {
-            url: location.protocol + '//' + location.host + ':8080/reqaba/',
+            url: location.protocol + '//' + location.host + '/api/',
             webURL: location.protocol + '//' + location.host + '/',
             user: null,
             sessionId: ''
