@@ -34,10 +34,8 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">الأولوية <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select ng-model="bean.pirority"  class="form-control col-md-7 col-xs-12">
-                                        <option ng-selected="bean.pirority==1"  value="1">بالغ الأهمية</option>
-                                        <option  ng-selected="bean.pirority==2" value="2">متوسط الأهمية</option>
-                                        <option  ng-selected="bean.pirority==3" value="3">أقل أهمية</option>
+                                    <select ng-model="bean.pirority" class="form-control col-md-7 col-xs-12">
+                                        <option ng-repeat="priority in priorities" ng-selected="bean.pirority==priority.id"  value="{{ priority.id }}">{{ priority.name }} (دورة كل {{ priority.days }} يوم)</option>
                                     </select>
                                 </div>
                             </div>

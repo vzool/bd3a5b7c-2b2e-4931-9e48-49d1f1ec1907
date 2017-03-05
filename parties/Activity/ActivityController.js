@@ -1,8 +1,14 @@
 
 app.controller('activityCont', ['$scope', '$http', 'CRUDServices', '$routeParams', 'growl', function($scope, $http, CRUDServices, $routeParams, growl){
-    $scope.bean = {"id" : null , "name": "",
-  "pirority": ""};
+
+    $scope.bean = {
+        "id" : null,
+        "name": "",
+        "pirority": ""
+    };
+
     CRUDServices.methodLink = 'activity';
+
     $scope.getBeans = function (){
     	CRUDServices.getAll().success(function(data){
             $scope.beans = data.result ;
@@ -12,8 +18,11 @@ app.controller('activityCont', ['$scope', '$http', 'CRUDServices', '$routeParams
     $scope.getBeans();
 
     $scope.resetFields = function (){
-        $scope.bean = {"id" : null , "name": "",
-  "pirority": ""};
+        $scope.bean = {
+            "id" : null,
+            "name": "",
+            "pirority": ""
+        };
     }
 
     $scope.saveBean = function () {
@@ -32,14 +41,19 @@ app.controller('activityCont', ['$scope', '$http', 'CRUDServices', '$routeParams
     }
 
     $scope.selectBean = function(xBean){
-    	$scope.bean = xBean ;
+    	$scope.bean = xBean;
     }
-    
-      $scope.getBean = function (id) {
 
-            CRUDServices.get("activity", id).success(function (data) {
-                $scope.bean = data.result;
-            });
-        }
-       
+    $scope.getBean = function (id) {
+
+        CRUDServices.get("activity", id).success(function (data) {
+            $scope.bean = data.result;
+        });
+    }
+
+    CRUDServices.getAllCustom('priority').success(function (data) {
+        $scope.priorities = data.result;
+        console.log($scope.priorities);
+    });
+
 }]);
